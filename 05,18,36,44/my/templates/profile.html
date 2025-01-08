@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh">
+
+<head>
+    <style>
+        .post-card {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            border: 1px solid #dddddd;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>編輯個人檔案</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container mt-5">
+    <h2>編輯個人檔案</h2>
+    <user method="post">
+        {% csrf_token %}
+        <div class="post-card">
+            <label for="username" class="form-label">姓名</label>
+            {{ User.username }}<br>
+            <label for="email" class="form-label">電子郵件</label>
+            {{ User.email }}
+        </div>
+        <button type="submit" class="btn btn-primary">保存更改</button>
+        <a href="{% url 'homepage' %}" class="btn btn-secondary">取消</a>
+    </user>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

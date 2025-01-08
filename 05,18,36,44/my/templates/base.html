@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}裝狗D咖米唰{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 主題色和排版風格 */
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            background-color: #f9f9f4;
+        }
+        .navbar, .navbar-brand {
+            background-color: #006400;
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .main-content {
+        flex-grow: 1;
+        padding: 1rem;
+        background-color: #ffffff;
+        overflow: auto;
+        }
+        /* 卡片樣式 */
+        .post-card {
+            background-color: white;
+            border-radius: 8px;
+            border: 1px solid #dddddd;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .post-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 100, 0, 0.15);
+        }
+        .post-card h5 {
+            color: #333333;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .post-card p {
+            color: #555555;
+        }
+        /* 時間樣式 */
+        .timestamp {
+            font-size: 0.9rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <!-- 固定頂部導航列 -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <span><a class="navbar-brand" href="/homepage">裝狗D咖米唰</a></span>
+                {% block school_name %}<span class="navbar-text"></span> {% endblock %}
+                <div class="ms-auto">
+                    {% block profile %}<a class="navbar-brand" href="/edit_profile">個人</a>{% endblock %}
+                </div>        
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主內容區 -->
+    <main>
+        <div class="container content">
+            <div class="row">
+                <!-- 左側欄位 -->
+                <div class="col-md-2">
+                    <div class="sidebar left-sidebar">
+                        <div class="card-header">學校</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/ntub">北商</a></li>
+                            <li class="list-group-item"><a href="/ntut">北科</a></li>
+                            <li class="list-group-item"><a href="/ntuh">北醫</a></li>
+                            <li class="list-group-item"><a href="/ntudt">台科</a></li>
+                            <li class="list-group-item"><a href="/others">其他</a></li>
+                        </ul>
+                        <div class="card-header">生活</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="/mood">情感</a></li>
+                            <li class="list-group-item"><a href="/tech">科技</a></li>
+                            <li class="list-group-item"><a href="{/note">雜記</a></li>                       
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 主要內容區域 -->
+                <div class="col-md-8">
+                    <h1>最新貼文</h1>
+                        {% block content %}
+                        {% endblock %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
