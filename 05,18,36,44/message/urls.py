@@ -23,7 +23,7 @@ from my.views import hello, homepage, list_posts, ntub, ntut, ntuh, ntust, other
 urlpatterns = [
     # www.xxx.com// -> 函數
     path('',hello),
-    path('homepage/', homepage, name='homepage.html'),
+    path('homepage', homepage, name='homepage.html'),
 
     path('ntub/', ntub, name='ntub.html'),
     path('ntut/', ntut, name='ntut.html'),
