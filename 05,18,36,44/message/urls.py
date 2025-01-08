@@ -25,14 +25,14 @@ urlpatterns = [
     path('',hello),
     path('homepage', homepage, name='homepage.html'),
 
-    path('ntub/', ntub, name='ntub.html'),
-    path('ntut/', ntut, name='ntut.html'),
-    path('ntuh/', ntuh, name='ntuh.html'),
-    path('ntust/', ntust, name='ntust.html'),
-    path('others/', others, name='others.html'),
-    path('mood/', mood, name='mood.html'),
-    path('tech/', tech, name='tech.html'),
-    path('note/', note, name='note.html'),
+    path('ntub', ntub, name='ntub.html'),
+    path('ntut', ntut, name='ntut.html'),
+    path('ntuh', ntuh, name='ntuh.html'),
+    path('ntust', ntust, name='ntust.html'),
+    path('others', others, name='others.html'),
+    path('mood', mood, name='mood.html'),
+    path('tech', tech, name='tech.html'),
+    path('note', note, name='note.html'),
 
     path('listposts/', list_posts),
     path('urltest/<int:year>/<int:month>/<str:words>/', \
